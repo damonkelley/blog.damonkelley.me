@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"]
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    title
+      | blog.damonkelley.me
+      = ' - ' + current_article.title unless current_article.nil?
+    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    = stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"
+    = stylesheet_link_tag :all
+  body
+    a.site-title href="/"
+      span.head
+        |blog
+      span.rest .damonkelley.me
+        
+    #main[role="main"]
+      = yield
+    hr
+    = partial 'footer'

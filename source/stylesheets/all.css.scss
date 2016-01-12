@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,500italic,700);
+@import 'syntax-highlighting';
+
+body {
+  font-family: "Roboto Mono", monospace;
+  margin: auto;
+  width: 70%;
+  max-width: 900px;
+}
+
+a {
+  color: lighten(#282861, 10%);
+}
+
+code {
+  background-color: #eee;
+  padding: .1em .2em .1em .2em;
+  font-family: monospace;
+}
+
+.site-title {
+  font-size: 3em;
+  text-decoration: none;
+  color: #000;
+
+  .head {
+    color: #BD1919;
+  }
+  .rest {
+    color: #282861;
+  }
+}
+
+.label {
+  display: inline-block;
+  font-size: .8em;
+  margin: .1em;
+  padding: .1em;  
+  color: #fff;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.tag{
+  @extend .label;
+  background-color: #BD1919;
+}
+
+.year {
+  @extend .label;
+  background-color: #282861;
+}
+
+@media (max-width: 762px) {
+  .site-title {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    width: 90%;
+    font-size: 12px;
+    max-width: 1000px;
+  }
+}

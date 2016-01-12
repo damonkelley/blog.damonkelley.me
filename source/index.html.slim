@@ -1,0 +1,44 @@
+---
+pageable: true
+--- 
+
+/* - if paginate && num_pages > 1 */
+/*   p */
+/*     | Page */ 
+/*     = page_number */
+/*     |  of */ 
+/*     = num_pages */
+/*   - if prev_page */
+/*     p */
+/*       = link_to 'Previous page', prev_page */
+= wrap_layout :pagination do
+  h2 Posts
+  - page_articles.each_with_index do |article, i|
+    h3.title
+      = link_to article.title, article
+      | &nbsp;
+    span
+      = article.date.strftime('%b %e %Y')
+      .tags
+        - article.tags.each do |tag|
+          .tag
+            = tag
+    = article.summary
+
+/* - if paginate */
+/*   - if next_page */
+/*     p */
+/*       = link_to 'Next page', next_page */
+aside
+  h2
+    | Tags
+  .tags
+    - blog.tags.each do |tag, articles|
+      span.tag
+        = link_to "#{tag} (#{articles.size})", tag_path(tag)
+  h2
+    | By Year
+  .tags
+    - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+      span.year
+        = link_to "#{year} (#{articles.size})", blog_year_path(year)
