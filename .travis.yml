@@ -1,0 +1,16 @@
+language: ruby
+sudo: false
+rvm:
+  - 2.3.0
+cache: bundler
+script: bundle exec middleman build
+deploy:
+  provider: s3
+  access_key_id: AKIAIXYM3L35WJKMQSRQ
+  secret_access_key:
+    secure: Lg1viNUdDueh1+enOmaWNr5yDXxdnf2vB/uCWxx+vea5CRHyiaAdQCDt3QG9LxDcgftoAXqxD5acQN2n4fnLgXrMlDWrHpR0YpNRVg3tGsDGigYlb3k44iMjKCnn4EDjheXyJL/MDZP0PgZBQdl3MMeJxbOiViVR5YKldtngCZ2uicZ6M6O0op0s9XgN65mMibyWFr34xwjyd+4uW2cPFGC6/kc6COtj1IQ0Q8TxPNO7eiwQDOPogIwKIwazXs3gUVSiV6PMJRviobtnoH0qIhyHy+o5+NlQLJlGXuA/iWMIk3vBz4b5MkP3wZdIIyL2pvKkFz5qY9dd5wQYG1OzVOE9Ufo9O6AWxY/ZSxQbvmapT38PIZjD+v4xvvAE3Gn9tYaGXW4DIY4KKFh5+uA2u/Jm8ouf9a6CjJR3wksvnINgYrcCCsY3ywoV109xGZHKQZvd8netBXwH6gp0jy/kUYTaTRMaoVnTpCRyzflm25Jo+ntrHs9TBeXeLAhwF6yYDqwHJEpb898lEOhyAzvbtKBf/G1JX5AdrohH8l1j/lbYq1wyoH8KbU4lptWCRrjhk6VhRR3w8KFxXbMqbwhQaMzbErWXfahfNSzruHIPVCK3XM3PkAsYWilKiUHqRRpkip+vFaDjgn/vx6hQxFZTof/oSlcIs9/2qrKaVP7kqs4=
+  bucket: blog.damonkelley.me
+  local-dir: build
+  skip_cleanup: true
+  on:
+    repo: damonkelley/blog.damonkelley.me
