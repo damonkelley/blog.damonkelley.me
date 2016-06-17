@@ -5,7 +5,7 @@ date: 2016-06-17 18:24 UTC
 tags: kata
 ---
 
-Coming into my apprenticeship, I knew that katas would play a significant role. As my start date approached, I started doing the popular katas. Katas as [prime factors](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata), [string calculator](http://osherove.com/tdd-kata-1/), [change maker](http://rubyquiz.com/quiz154.html), and [roman numerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals). Optimistically, I tried to do one everyday, but realistically I did one once or twice a week.
+Coming into my apprenticeship, I knew that katas would play a significant role. As my start date approached, I started doing the popular katas. Katas such as [prime factors](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata), [string calculator](http://osherove.com/tdd-kata-1/), [change maker](http://rubyquiz.com/quiz154.html), and [roman numerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals). Optimistically, I tried to do one everyday, but realistically I did one once or twice a week.
 
 When I met with my mentors at the beginning of this week, one of my assignments was to perform the prime factors kata for the two of them at some point during the week, so I spent the rest of my week *practicing* the kata and preparing for the performance.
 
