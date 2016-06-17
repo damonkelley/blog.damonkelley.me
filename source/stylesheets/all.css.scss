@@ -18,6 +18,15 @@ code {
   font-family: monospace;
 }
 
+blockquote {
+  color: #737373;
+  border-left: .3em solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+
 .site-title {
   font-size: 3em;
   text-decoration: none;
