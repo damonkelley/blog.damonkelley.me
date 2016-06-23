@@ -30,7 +30,7 @@ class Game(object):
         self.player2 = player
 
     def next_turn(self):
-        return this.player1
+        return self.player1
 ```
 
 Awesome! Green bar!
