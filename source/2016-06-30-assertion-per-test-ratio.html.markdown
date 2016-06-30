@@ -19,14 +19,13 @@ The key word here is _aim_. Sometimes this is easy, sometimes it is more difficu
 
 ### State is difficult to test
 
-In OOP, objects are data + behaviour, and it is pretty common for objects behaviour to mutate its data. So how do we test this?
+In OOP, objects are data + behaviour, and it is common for an object's behaviour to mutate it's data. So how do we test this?
 
 In certain cases you can benefit from multiple assertions here. If you are familiar with "Arrange Act Assert", then this might be called "Arrange Assert Act Assert".
 
 Lets look at an example
 
 ```java
-
 class IncrementalServer {
 
     private int current = 0;
@@ -49,7 +48,6 @@ class IncrementalServerTest {
         assertEquals(1, server.poll());
     }
 }
-
 ```
 
 This is a trivial example, and here I would probably add an additional test that server starts at 0, but it demonstrates making an assertion about the initial state. This pattern is useful when the system under test modifies the state of some other object.
