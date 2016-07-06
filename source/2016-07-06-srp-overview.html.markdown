@@ -9,6 +9,8 @@ The Single Responsibility Principle states that a class must have only one reaso
 
 To demonstrate this principle, let's take a look at the `BoardGame` example:
 
+READMORE
+
 ```java
 interface BoardGame {
     public void move(Player, Space);
