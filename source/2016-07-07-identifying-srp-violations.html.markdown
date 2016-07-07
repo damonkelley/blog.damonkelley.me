@@ -5,7 +5,7 @@ date: 2016-07-07 05:24 UTC
 tags: SRP, SOLID, smells
 ---
 
-Realizing that a class is violating The Single Respsonsibility Principle tends to be much more difficult that resolving the the violations.
+Realizing that a class is violating The Single Responsibility Principle tends to be much more difficult that resolving the violations.
 
 Here are a few techniques that you can use to help.
 
@@ -25,11 +25,11 @@ This is the same as #1, but apply it to the summaries in the documentation or co
 
 For an example, see my previous post where I made a list of reasons that the `BoardGame` implementation could change. These reasons do not need to be 100% realistic either.
 
-Imagine you have implemented a game of TicTacToe in your favorite language. Let's say you have built a `Game` abstraction, a `Board` abstraction, and a `Player` abstraction. The rules are exercised within the `Game`. Everything is working working great, and you don't know of any bugs in your implementation.
+Imagine you have implemented a game of Tic-tac-toe in your favorite language. Let's say you have built a `Game` abstraction, a `Board` abstraction, and a `Player` abstraction. The rules are exercised within the `Game`. Everything is working working great, and you don't know of any bugs in your implementation.
 
-Now, what would need to change about your `Game` if the rules of TicTacToe suddenly changed, and it was now played with 3 players instead of 2?
+Now, what would need to change about your `Game` if the rules of Tic-tac-toe suddenly changed, and it was now played with 3 players instead of 2?
 
-What needs to change? What would be uneffected?
+What needs to change? What would be unaffected?
 
 If there is a group of methods that need to change, or do not need to change, it may indicate that the class has an additional responsibility.
 
@@ -49,7 +49,7 @@ interface CardGame {
 }
 ```
 
-Two of the methods have the a prefix of `score`. Classes with with a single responsibility, with high cohesion, do not tend to require a common prefix to communicate behaviour.
+Two of the methods have a prefix of `score`. Classes with with a single responsibility, with high cohesion, do not tend to require a common prefix to communicate behaviour.
 
 This is our clue that our class may have multiple responsibilities, or more optimistically, a clue that a new class is ready to be born!
 
@@ -98,4 +98,4 @@ This mismatch in abstraction level could indicate an SRP violation.
 
 ### Wrap up
 
-These are some techniques that I have used to audit the responsibilties of a class. None of these are absolute. Having a group of methods with a common prefix is not going to illuminate an additional responsibility 100% of the time, but hopefully these techniques are more helpful than not the majority of the time.
+These are some techniques that I have used to audit the responsibilities of a class. None of these are absolute. Having a group of methods with a common prefix is not going to illuminate an additional responsibility 100% of the time, but hopefully these techniques are more helpful than not the majority of the time.
