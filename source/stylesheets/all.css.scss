@@ -44,7 +44,7 @@ blockquote {
   display: inline-block;
   font-size: .8em;
   margin: .1em;
-  padding: .1em;  
+  padding: .1em;
   color: #fff;
   a {
     text-decoration: none;
@@ -69,9 +69,13 @@ blockquote {
 }
 
 @media (max-width: 500px) {
+  .site-title {
+    font-size: 1.3em;
+  }
+
   body {
     width: 90%;
-    font-size: 12px;
+    font-size: 1.3em;
     max-width: 1000px;
   }
 }
