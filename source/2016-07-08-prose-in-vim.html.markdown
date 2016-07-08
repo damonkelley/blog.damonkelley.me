@@ -1,12 +1,11 @@
 ---
 title: "Prose in Vim"
 layout: post
-published: false
 date: 2016-07-08 05:31 UTC
 tags: vim, prose, blogging
 ---
 
-These are a few of the built-in features that I have started to get much more use now that I am writing more prose in Vim.
+As I have been writing more prose as of late, I have begun to get more use out of a few features that are built-in to Vim.
 
 READMORE
 
@@ -22,7 +21,7 @@ Vim has a built-in spell checker! (Which I am using as I write this post.)
 
 With `spell` enabled, Vim will load the appropriate spell file into memory and continuously check the buffer for misspellings.
 
-`]s` and `[s` will jump to the next or previous spelling error respectively. With the cursor on the violating word, `z=` will list the possible corrections. The tends to be fairly accurate at guessing what I meant. I almost always end up accepting the first option.
+`]s` and `[s` will jump to the next or previous spelling error respectively. With the cursor on the violating word, `z=` will list the possible corrections. This tends to be fairly accurate at detecting what I intended. I typically end up accepting the first option.
 
 There are quite a few features, so checkout `:h spell` for a more complete list of features.
 
