@@ -13,9 +13,9 @@ READMORE
 
 ### ISP applies SRP to our dependencies
 
-With segregated interfaces we have a finer grain of control over what our clients depend on.
+With segregated interfaces, we have a finer grain of control over what our clients depend on.
 
-Let's consider a class that implements multiple interfaces, `DimmerLight`. If we are depending on the concrete class instead an abstraction, then we are then implicitly depending on the combined interface of the class instead of the interface of the abstraction.
+If we are depending on the concrete class instead an abstraction, then we are then implicitly depending on the combined interface of the class instead of the interface of the abstraction.
 
 ```java
 class DimmerLight implements Toggle, Dimmer {
@@ -70,4 +70,4 @@ When we are free to make these sorts of changes, we have *reduced* the coupling 
 
 ### Wrap up
 
-At this point, we are a bit _far_ from SRP. Much of what was discussed here has more to do with ISP and The Dependency Inversion Principle (DIP). However, the essence of SRP is there. By limiting the dependencies to the responsibilities that our clients require, the code is enabled to be less coupled and potentially more cohesive, which is the goal of The Single Responsibility Principle.
+At this point, we are a bit far from SRP. Much of what was discussed here has more to do with ISP and The Dependency Inversion Principle (DIP). However, the essence of SRP is there. By limiting the dependencies to the responsibilities that our clients require, the code is enabled to be less coupled and potentially more cohesive, which is the goal of The Single Responsibility Principle.
