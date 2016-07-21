@@ -2,7 +2,7 @@
 title: Where do interfaces come from?
 layout: post
 date: 2016-07-20 03:36 UTC
-tags:
+tags: interfaces, patterns, abstractions, java
 ---
 
 As I am working more with Java and thinking about interfaces, I am starting to see some patterns in where and how interfaces can be introduced. Here are two patterns that I have seen.
