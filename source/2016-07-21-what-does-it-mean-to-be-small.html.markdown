@@ -1,7 +1,7 @@
 ---
 title: What does it mean to be small?
 layout: post
-date: 2016-07-22 17:01 UTC
+date: 2016-07-21 17:01 UTC
 tags: SRP, small classes
 ---
 
