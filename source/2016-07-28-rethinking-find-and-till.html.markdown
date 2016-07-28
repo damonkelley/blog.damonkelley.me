@@ -17,14 +17,14 @@ This can be solved with some practice.
 
 #### 2. The Perception of Precision
 
-I think the other reason is that these two motions are perceived as being reserved for precision. I frequently see example of `f` and `t` usage with a count argument supplied.
+I think the other reason is that these two motions are perceived as being reserved for precision. I frequently see examples of `f` and `t` usage with a count argument supplied.
 
 * `d3tA` - _delete up to the third A in the line_
 * `4fN` - _find the fourth next N in the line_
 
-Who has time for that kind of precision? What is even the point? In the time it takes me to count how many `N`s there are between where I am, and where I want go, I could have covered that distance by simply holding down `l` multiple times over, or smashing down `x`!
+Who has time for that kind of precision? What is even the point? In the time it takes me to count how many `N`s there are between where I am, and where I want go, I could have covered that distance by simply holding down `l` multiple times over!
 
-While the _find_ and _till_ motions can be used for precision, they don't have to be.
+While the _find_ and _till_ motions **can** be used for precision, they don't **have** to be.
 
 
 ### Rethinking Precision
