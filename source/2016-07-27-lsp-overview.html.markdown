@@ -32,7 +32,7 @@ class Bird {
 }
 ```
 
-The author of the `Pigeon` class decided that a `Pigeon` does not _chirp_ so the he/she overrode the `chirp` method to do nothing and added a new `squawk` method.
+The author of the `Pigeon` class decided that a `Pigeon` does not _chirp_ so he/she overrode the `chirp` method to do nothing and added a new `squawk` method.
 
 ```java
 class Pigeon extends Bird {
