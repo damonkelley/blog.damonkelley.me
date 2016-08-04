@@ -6,9 +6,11 @@ tags: java, event listeners
 ---
 
 
-Events and event listeners have always seemed very opaque to me. GUI programming and front-web programming will often use these mechanisms heavily. I recently had the need to create my own event and event listener in Java, and it shed a lot of light on how it works.
+Events and event listeners have always seemed opaque to me. GUI programming and front-web programming will often use these mechanisms heavily. I recently had the need to create my own event and event listener in Java, and it shed a light on how it works.
 
-In order to demonstrate this, we will pretend that we have a digital magazine call _EZine_. We have a web app for it, and we would like to extend it so that we can hook into the when our issues are published. Inside of our app, we have a class that is responsible for publishing the issue.
+In order to demonstrate this, let's will pretend that we have a digital magazine call _EZine_. There is a web app for it, and we want to extend it so we can hook into when our issues are published to let our followers on Twitter know a new issue is out.
+
+Inside of our app, we have a class called `EZinePublisher` that is responsible for publishing the issue.
 
 ```java
 class EZinePublisher {
@@ -34,7 +36,7 @@ Let's modify this to register an event listener and emit an event. How do we do 
 
 ### Registration
 
-We need some way to register a listener<sup>1</sup>. A common way to register listeners is with a setter method. We can add a method to the `EZinePublisher`. We will call it `registerListener`.
+We need some way to register a listener<sup>1</sup>. Lets start by adding a method to the `EZinePublisher`. We will call it `registerListener`.
 
 <sub>1. A listener is just an object which the registrar will invoke one or more methods on.</sub>
 
@@ -61,7 +63,7 @@ class EZinePublisher {
 
 We have one problem though. With mere `Object`s, there isn't much for our listeners do once our event is occurs. We are limited to the API of `Object` when it comes to the code we want to run when our event occurs.
 
-Wouldn't it be nice if we could have a some new type that we could inject whatever code we want to run into. Sounds like a job for an interface.
+Wouldn't it be nice if we could have some new type that we could inject whatever code we want to run into? That sounds like a job for an interface.
 
 ```java
 class EZinePublisher {
@@ -80,7 +82,7 @@ We have added a new public `OnPublishEventListener` interface inside the `EZineP
 
 Now any class who would like to subscribe to the _publish_ event only needs to implement the `OnPublishEventListener` interface, and register it with the `EZinePublisher`.
 
-And that was the last step. The `EZinePublisher` has everything it needs to start registering event listeners. Now we need to hook into our _publish_ event.
+That was the last step. The `EZinePublisher` has everything it needs to start registering event listeners. Now we need to hook into our _publish_ event.
 
 ### Hooking into _publish_
 
@@ -98,7 +100,7 @@ class EZinePublisher {
 }
 ```
 
-That is it. We are now "emitting" an event, and the listeners are reacting to it.
+Simple. Now we are "emitting" an event, and the listeners are reacting to it.
 
 
 ### One Last Look
@@ -132,10 +134,7 @@ class EZinePublisher {
 ### An Outsiders Perspective
 
 
-Now that the `EZinePublisher` is registering listeners and emitting a _publish_ event, let's look at this from the perspective of the listener.
-
-It would nice if we could we tweet to all of our followers on Twitter that a new issue is available. We can now create an event listener to do that.
-
+Let's look at this from the perspective of the listener. We need to create a listener that will tweet when an issue is published.
 
 ```java
 class TweetOnPublishListener implements EZinePublisher.OnPublishEventListener {
@@ -146,7 +145,7 @@ class TweetOnPublishListener implements EZinePublisher.OnPublishEventListener {
 }
 ```
 
-Then we just need to register that listener with the publisher.
+And then we simply register it with the publisher.
 
 ```java
 EZinePublisher publisher = new EZinePublisher(eZine);
