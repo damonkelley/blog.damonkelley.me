@@ -143,6 +143,6 @@ I omitted the definition of an imperative language, because there is probably en
 
 #### Sources
 
-1. Statement (computer science). (2016, August 3). In Wikipedia, The Free Encyclopedia. Retrieved 14:20, August 5, 2016, from https://en.wikipedia.org/w/index.php?title=Statement_(computer_science)&oldid=732881180
+1. Statement (computer science). (2016, August 3). In Wikipedia, The Free Encyclopedia. Retrieved 14:20, August 5, 2016, from [https://en.wikipedia.org/w/index.php?title=Statement_(computer_science)&oldid=732881180](https://en.wikipedia.org/w/index.php?title=Statement_(computer_science)&oldid=732881180)
 
-2. Expression (computer science). (2016, March 31). In Wikipedia, The Free Encyclopedia. Retrieved 14:08, August 5, 2016, from https://en.wikipedia.org/w/index.php?title=Expression_(computer_science)&oldid=712921965
+2. Expression (computer science). (2016, March 31). In Wikipedia, The Free Encyclopedia. Retrieved 14:08, August 5, 2016, from [https://en.wikipedia.org/w/index.php?title=Expression_(computer_science)&oldid=712921965](https://en.wikipedia.org/w/index.php?title=Expression_(computer_science)&oldid=712921965)
