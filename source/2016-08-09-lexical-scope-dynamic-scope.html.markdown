@@ -118,6 +118,7 @@ f
 #=> 2
 
 ```
+<sub>Example was derived this [snippet](https://en.wikipedia.org/w/index.php?title=Scope_(computer_science)&oldid=731014985#Lexical_scoping)</sub>
 
 Knowing this could save you a headache the next time you need to write a shell script.
 
