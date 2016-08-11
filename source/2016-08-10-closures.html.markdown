@@ -40,9 +40,9 @@ Let's look at another example.
 (defn f [x]
   (fn [] + 10 x))
 
-(def my-closure (f 20))
+(def a-closure (f 20))
 
-(my-closure)
+(a-closure)
 ; => 30
 ```
 
@@ -54,9 +54,9 @@ On the other hand, this would not be a closure because the function returned by 
 (defn f []
   (fn [x] + 10 x))
 
-(def my-closure (f))
+(def not-a-closure (f))
 
-(my-closure 20)
+(not-a-closure 20)
 ; => 30
 ```
 
