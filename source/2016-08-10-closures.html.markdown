@@ -38,7 +38,7 @@ Let's look at another example.
 
 ```clojure
 (defn f [x]
-  (fn [] + 10 x))
+  (fn [] (+ 10 x)))
 
 (def a-closure (f 20))
 
@@ -52,7 +52,7 @@ On the other hand, this would not be a closure because the function returned by 
 
 ```clojure
 (defn f []
-  (fn [x] + 10 x))
+  (fn [x] (+ 10 x)))
 
 (def not-a-closure (f))
 
