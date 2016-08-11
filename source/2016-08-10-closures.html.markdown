@@ -23,7 +23,7 @@ def f(x):
         print(local_to_f)
 ```
 
-The function `f` two bound variables, the parameter `x` and the local variable `local_to_f`. Similarly, `h` has the parameter `y` and the local variable `local_to_g`.
+The function `f` has two bound variables, the parameter `x` and the local variable `local_to_f`. Similarly, `h` has the parameter `y` and the local variable `local_to_g`.
 
 `g` also has a free variable, `local_to_f`. This is free variable because it is not defined locally (i.e. within the definition of `g`) and it is not a parameter to the function.
 
