@@ -52,7 +52,22 @@ blockquote {
   }
 }
 
-.tag{
+.metadata {
+  display: flex;
+  justify-content: space-between;
+
+  .date {
+    order: 0
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    order: 1;
+  }
+}
+
+.tag {
   @extend .label;
   background-color: #BD1919;
 }
