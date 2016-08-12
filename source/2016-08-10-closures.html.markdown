@@ -46,7 +46,7 @@ Let's look at another example.
 ; => 30
 ```
 
-The function returned from `f` is a closure because it has a free variable `x`.
+The anonymous function created in `f` is a closure because it has a free variable `x`.
 
 On the other hand, this would not be a closure because the function returned by `f` does not have any free variables.
 
