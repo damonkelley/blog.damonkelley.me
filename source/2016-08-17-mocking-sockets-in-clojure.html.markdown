@@ -16,7 +16,7 @@ First things first. How do we create a fake `Socket` object?
 We can use `proxy`<sup>2</sup> to wrap up the `Socket` to provide an alternative implementation for some or all of the `Socket` class' methods.
 
 ```clojure
-(ns 'blog-example.mock
+(ns blog-example.mock
   (:import java.net.Socket))
 
 (defn socket []
@@ -28,7 +28,7 @@ We want simulate that the `Socket` begins open, and closes when it receives the 
 We can close over the proxy with a `let` statement and bind an atom. Here we have bound `disconnected?` to an atom set to `false`.
 
 ```clojure
-(ns 'blog-example.mock
+(ns blog-example.mock
   (:import java.net.Socket))
 
 (defn socket []
@@ -39,7 +39,7 @@ We can close over the proxy with a `let` statement and bind an atom. Here we hav
 Then we can add implementations for `close` and `isClosed` to simulate this behaviour without actually creating a connection on the host.
 
 ```clojure
-(ns 'blog-example.mock
+(ns blog-example.mock
   (:import java.net.Socket))
 
 (defn socket []
@@ -56,7 +56,7 @@ Now our methods can modify the atom for as long as the proxy is available. Every
 And here is the function that operates on the socket and its test.
 
 ```clojure
-(ns 'blog-example.socket-io-test
+(ns blog-example.socket-io-test
   (:require [clojure.test :refer :all]
             [blog-example.mock :as mock]))
 
@@ -93,7 +93,7 @@ We can overload the `getInputStream` and `getOutputStream` and use the `ByteArra
 `input` is will be a string that the mock will use to create a `ByteArrayInputStream`. `output` will be a `ByteArrayOutputStream`, which we can hold on to to check that our function writes to the socket.
 
 ```clojure
-(ns 'blog-example.socket-io-test
+(ns blog-example.socket-io-test
   (:require [clojure.test :refer :all]
             [blog-example.mock :as mock]))
 
