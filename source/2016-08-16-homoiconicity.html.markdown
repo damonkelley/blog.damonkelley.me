@@ -33,7 +33,7 @@ CPython creates the AST using C, but Python ships with an `ast` library<sup>1</s
 'Module(body=[Expr(value=BinOp(left=Num(n=2), op=Mult(), right=Num(n=2)))])'
 ```
 
-The import part here is the `Expr(value=BinOp(left=Num(n=2), op=Mult(), righ=Num(n=2)))`. This is the AST of our expression `2 * 2`.
+The important part here is the `Expr(value=BinOp(left=Num(n=2), op=Mult(), righ=Num(n=2)))`. This is the AST of our expression `2 * 2`.
 
 Let's break it down a little.
 

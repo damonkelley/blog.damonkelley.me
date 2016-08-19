@@ -7,7 +7,7 @@ tags: clojure, java, mocking, sockets
 
 In Clojure-land we have access to a vast number of libraries via Java interop. We are free to create Java objects, and call methods on those objects, methods that might mutate the state of those objects.
 
-For the project I have been working on, I needed to use Java's `Socket` API, but one problem I faced was figuring out how create a suitable test double for the live socket object. As a relative newcomer to Clojure, it was not immediately apparent to me how I could accomplish this. This post goes over the approach that I took.
+For the project I have been working on, I needed to use Java's `Socket` API. One problem I faced was figuring out how create a suitable test double for the live socket object. As a relative newcomer to Clojure, it was not immediately apparent to me how I could accomplish this. This post goes over the approach that I took.
 
 #### Creating a mock<sup>1</sup> Socket
 
