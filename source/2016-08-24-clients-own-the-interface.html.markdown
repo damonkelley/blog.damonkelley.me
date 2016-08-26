@@ -39,7 +39,7 @@ However, observe the nature of our dependencies when we introduce the client of 
 
 This reveals a flaw in the heuristic mentioned earlier.
 
-Yes, it is true that the layers of the system are depending on abstractions, and that buffer between the different layer is present. Our software flexible.
+Yes, it is true that the layers of the system are depending on abstractions, and the buffer between the different layers is present. Our software flexible.
 
 However, in this design, the high level is depending on the low level. This is exactly the inverse of DIP.
 

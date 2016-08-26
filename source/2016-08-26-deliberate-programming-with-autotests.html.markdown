@@ -11,13 +11,11 @@ Surprisingly to me, one of the things that has driven change in my approach has 
 
 My latest project is in Clojure, and the test framework I have chosen, Speclj, comes with an auto-test runner, which alleviates the pain of starting up the JVM every time I want to run the tests. (i.e. keeps the feedback cycle short)
 
-Whenever a file changes on disk, the auto-test runner will rerun the tests of all namespaces that depend on that file.
+Whenever a file changes on disk, the auto-test runner will rerun the tests for all namespaces that depend on that file.
 
-Before I decided to take a more deliberate approach, I found that my workflow with the auto-test runner amplified this feeling of programming coincidentally.
+Before I decided to take a more deliberate approach, I found that my workflow with the auto-test runner amplified this feeling of programming coincidentally. What I found is that I needed to alter my workflow inside of Vim to accommodate the auto-test runner, and so far the results have been good.
 
-What I found is that I needed to alter my workflow inside of Vim to accommodate the auto-test runner, and so far the results have been good.
-
-Here is one setting and one tool I have started using to improve my workflow.
+Below is one setting and one tool I have started using to improve my workflow in Vim.
 
 ### 1. `:set hidden`
 
@@ -46,7 +44,7 @@ So now we have made changes in two buffers/files and we are ready to run the tes
 
 This is where `:bufdo update` comes in handy.
 
-`bufdo` will execute the provided commands on each buffer in the buffer list. `update` is similar to `write` but it will only write the buffer if it has been modified. Putting them together, `:bufdo update` will write each of the buffers in the buffer list if they contain modifications.
+`bufdo` will execute the provided command on each buffer in the buffer list. `update` is similar to `write` but it will only write the buffer if it has been modified. Putting them together, `:bufdo update` will write each of the buffers in the buffer list if they contain modifications.
 
 It is worth noting that Vim will write the buffers sequentially, so it is possible for Speclj to pick up on changes to one file and start the tests again before the other file or files have been written. Though, on my machine, I haven't noticed this happen, even when I am writing three or four files at once.
 

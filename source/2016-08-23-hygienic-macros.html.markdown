@@ -75,7 +75,7 @@ MYOTHERMACRO with b 1
 MYOTHERMACRO with b again 2
 ```
 
-What has happened is that the macro declared a local variable inside of the do block, which has hidden `a` and prevents it from being incremented. Meanwhile, `b` is not hidden. Lets look at how this code was expanded.
+What has happened is the macro declared a local variable inside of the do block, which has hidden `a` and prevents it from being incremented. Meanwhile, `b` is not hidden. Let's look at how this code was expanded.
 
 ```c
 int main() {
