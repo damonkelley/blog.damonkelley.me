@@ -1,7 +1,6 @@
 ---
 title: Clients Own the Interface
 layout: post
-published: false
 date: 2016-08-24 01:26 UTC
 tags: DIP
 ---
@@ -14,44 +13,58 @@ img {
   padding-bottom: 1.3em;
   height: auto;
   width: 100%;
-  max-width: 30em;
+  max-width: 35em;
 }
 </style>
 
 
-I am currently reading through the "PPP"<sup>1</sup>, and as I was reading the chapter on the Dependency Inversion Principle, and even as I write this blog post, I am find myself having a much better understanding of the principle. This enlightment, if you will, stems from a simple idea: the client owns the interface.
+Last week, if you asked me to define the Dependency Inversion Principle, I would have given you a simple answer.
 
-For a long time, I did not understand DIP, and how it was important. Later, when I started doing a bit of Java, it started to make sense.
+*"Depend on abstractions!<sup>1</sup>"*
 
-**Depend on abstractions!**
+However, just as Uncle Bob points out in _PPP_<sup>2</sup>, this heuristic can miss some of the finer details of DIP.
 
-However, just as Uncle Bob points out in the book, this heuristic is a bit naive.
+### Low-level details
 
-### Low level details
-
-When we think about our tools to create abstractions, we often think those abstractions as owned by the concretetions.
-
-We often think of the concretions as owning the interface that they implement. That ownership looks like this.
+When we think about our tools for creating abstractions, we often think of those abstractions as being owned by the concretions the implement/extend them. That type of ownership looks like this<sup>3</sup>.
 
 ![naive ownership](2016-08-24-clients-own-the-interface/naive-ownership.svg)
 
-This does not seem out of the ordinary. To me it seems perfectly normal. We have the concretion and the interface at the same abstraction level.
+This does not seem out of the ordinary. Actually, to me, it seems perfectly normal. We have the concretion and the interface at the same abstraction level.
 
 However, observe the nature of our dependencies when we introduce the client of the `Utility Layer` into the system.
 
 ![not inverted](2016-08-24-clients-own-the-interface/not-inverted.svg)
 
 
-This reveals a flaw in the heuristic mentioned earlier. The parts of the system are depending on abstractions. That buffer between the different layer is present, and our software flexible becuase of it. However, this design the opposite of what DIP is meant to provide. In this system, the high level module is still depending on low level modules.
+This reveals a flaw in the heuristic mentioned earlier.
 
+Yes, it is true that the layers of the system are depending on abstractions, and that buffer between the different layer is present. Our software flexible.
+
+However, in this design, the high level is depending on the low level. This is exactly the inverse of DIP.
+
+### High-level details
+
+How do we invert the dependency so that the low level depends on the high level?
+
+**We let the client own the interface**
 
 ![inverted ownership](2016-08-24-clients-own-the-interface/inverted-ownership.svg)
 
+This might seem trivial. All we did is rename the interface and "move" it into the higher level.
+
+
+Still, this gives any class the ability to interact with the Mechanism Layer without necessarily becoming a `Utility`. Furthermore, when we consider where changes to an interface come from, they are usually from the clients of the interface, not the implementers.
+
+### Conclusion
+
+_Depending on abstractions_ is a useful heuristic, and it gets us pretty far. Not to mention, this is much easier for someone new to SOLID to grapple with at first. But, it doesn't get us all of the way to DIP.
+
+Inversion of ownership is partly responsible for the "inversion" in the Dependency Inversion Principle. It might feel natural to keep interfaces with those classes that implement them, but with DIP, we want to invert the direction of the dependencies to that low level details depend on higher level details. Inverting ownership of interfaces does that for us.
+
 ---
+<sub>1. And depending on who I am speaking with, I might still respond with this simplification.</sub>
 
-<sup>1. _Agile Software Development, Principles, Practices, and Patterns_
+<sub>2. _Agile Software Development, Principles, Practices, and Patterns_</sub>
 
-* In a way this supports DIP
-    * If the implementers own the interface, we would still be depending on lower level details
-
-*
+<sub>3. Examples are derived from Chapter 11 of  _Agile Software Development, Principles, Practices, and Patterns_</sub>
