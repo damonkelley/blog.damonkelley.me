@@ -1,7 +1,6 @@
 ---
 title: Parallel Change with Multimethods
 laytout: post
-published: false
 date: 2016-08-30 04:10 UTC
 tags: clojure, refactoring, multimethods
 ---
