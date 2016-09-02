@@ -1,45 +1,36 @@
 ---
-title: Refactoring Clojure functions with Multimethods
+title: Parallel Change with Multimethods
 laytout: post
 published: false
 date: 2016-08-30 04:10 UTC
 tags: clojure, refactoring, multimethods
 ---
 
-In the past few weeks, there have been multiple times where I have been in the situation where I wanted to modify the data that a function operates on.
+Parallel Change is a refactoring pattern that is outlined [here](http://martinfowler.com/bliki/ParallelChange.html). Essentially the idea is that we can extend an existing interface to support new functionality, migrate all of the clients to use the new methods, and then kill the old methods once all of the clients are using the new methods. Another name for this pattern is *expand and contract*.
 
-Most recently, I was working a router to route HTTP requests, and I wanted to change the structure of the routes from a vector of vectors
+So how can we apply this to Clojure? One answer is multimethods.
 
-```clojure
-(def routes [["GET" "/" handlers/index]
-             ["POST" "/" handlers/create]
-             ["GET" "/log" handlers/log]])
-```
+There are a variety of whys that we could use mulitmethods to achieve this refactoring, but I am going to demonstrate one particular scenario where a function is operating on a collection, but we would like to modify the structure of this collection.
 
-to a vector of maps
-
-```clojure
-(def routes [{:path "/" :handlers {"GET" handlers/index
-                                   "POST" handlers/create}}
-             {:path "/log" :handlers {"GET" handlers/log}}])
-```
-
-These data structures are intended to be passed to a function called `route`. With a little help from multimethods, I was able to refactor `route` to accept either versions of `routes`, and later only the latter version of `routes`.
-
-For simplicity's sake, let's look at the `sum` function.
+The function that we want to refactor is `sum`.
 
 ```clojure
 (defn sum [nums]
   (apply + nums))
 ```
 
-We use this function in a few different places in our application.
+Currently it takes a list of integers, and sums them up. However, it has become apparent that this list need to be a list of strings instead of a list of integers.
 
-After our app starts to grow more and more, it becomes clear that `sum` needs to operate on a list of strings instead of a list of integers. *Once we make this change, everything will get easier*<sup>1</sup>.
+```clojure
+[1 2 3 4 5]
+["1" "2" "3" "4" "5"]
+```
 
-There is one problem, don't want to break all of the clients of `sum` that are still just passing two numbers.
+We use this function in a few different places in our application, and we don't want break all of the clients if we modify `sum` to operate on a list of strings. But one thing is for sure, eventually all clients will send a list of strings instead of a list of integers.
 
 We can use multimethods to start building an alternate version of `sum`.
+
+### Refactoring
 
 First we run the tests.
 
@@ -67,6 +58,8 @@ The tests still pass.
 ..
 2 passed 0 failed 0 error
 ```
+
+This steps allows us to verify that we have introduced the multimethod correctly and that the dispatch function is working the way we expect.
 
 Now we can start test driving the new and improved version that operates on list of strings.
 
@@ -112,4 +105,4 @@ Eventually, none of the clients are using the old version of `sum` and we can re
 
 ### Conclusion
 
-Obviously, this is a silly example that I cooked up. I can't think of a good reason why we would choose a list of strings over a list of numbers. However, it demonstrates how we can use multimethods to provide multiple implementations during a refactoring. We want to keep the function. The naming is accurate, it is used in the all right places, we just want to alter what we send through it. We can use multimethods as bridge from the old implementation to the new implementation.
+This is a silly example that I cooked up. I can't think of a good reason why we would choose a list of strings over a list of numbers. However, it demonstrates how we can use multimethods to provide multiple implementations during a refactoring. We want to keep the function. The naming is accurate, and it is used in the all right places. We just want to alter what we send through it. We can use multimethods as bridge from the old implementation to the new implementation.
