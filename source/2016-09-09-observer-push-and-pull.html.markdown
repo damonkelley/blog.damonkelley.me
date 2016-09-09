@@ -1,5 +1,5 @@
 ---
-title: The Spectrums of the Observer Pattern
+title: The Spectrum of the Observer Pattern
 layout: post
 date: 2016-09-09 02:15 UTC
 tags: patterns, observer, push model, pull model
@@ -9,7 +9,7 @@ The Observer pattern can be implemented on a spectrum. At one end of the spectru
 
 ### Pull Model
 
-In the push model, the observer is notified by the subject, but it is up to the observer to get that new data. The notification in this model is nothing more than a _ping_.
+In the push model, the observer is notified by the subject, but it is up to the observer to get that new data. The notification at this end of the spectrum is nothing more than a _ping_.
 
 In the example below, we have a `Counter` which can be observed. Every time `tick` is called, it will notify all of its observers.
 
