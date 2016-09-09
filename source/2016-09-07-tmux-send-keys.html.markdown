@@ -16,7 +16,7 @@ div[id^="asciicast-"] {
 A basic invocation of `send-keys` would be
 
 ```shell
-$ tmux send-keys -t 0 ls Enter
+$ tmux send-keys -t 1 ls Enter
 # $ ls<Enter>
 ```
 <script type="text/javascript" src="https://asciinema.org/a/38ke05b0h2otl3r2tolrdeg7r.js" id="asciicast-38ke05b0h2otl3r2tolrdeg7r" async data-speed=2 data-autoplay="true" data-loop="true"></script>
@@ -46,32 +46,32 @@ $ tmux send-keys -t 1 ls -1 Enter
 A target pane can specified as an and index
 
 ```shell
-$ tmux send-keys -t 1 ls Enter
+$ tmux send-keys -t 1 "echo Hello, world!" Enter
 ```
 
 Or to a relative to the window layout
 
 ```shell
-$ tmux send-keys -t top-right ls Enter
+$ tmux send-keys -t top-right "echo Hello, world!" Enter
 ```
 
 You can also target the last active pane
 
 ```shell
-$ tmux send-keys -t ! ls Enter
+$ tmux send-keys -t ! "echo Hello, world!" Enter
 ```
 
 Further, you can send keys to pane in another window
 
 ```shell
 # server is the name of the window `tmux rename-window server`
-$ tmux send-keys -t server.top ls Enter
+$ tmux send-keys -t server.top "echo Hello, world!" Enter
 ```
 
 You can even send keys to a pane in a window in a different session!
 
 ```shell
-$ tmux send-keys -t other-session:server.top ls Enter
+$ tmux send-keys -t other-session:server.top "echo Hello, world!" Enter
 ```
 
 ### Other options
