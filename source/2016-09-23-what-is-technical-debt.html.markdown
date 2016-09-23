@@ -5,11 +5,9 @@ date: 2016-09-23 04:57 UTC
 tags: technical debt
 ---
 
-Like many of us, for a long time, I was under the impression that technical debt equated to bad or unclean code. Recently, I learned the origin of the metaphor and the original intent of it.
+Ward Cunningham is credited with coming up with the debt metaphor. This is the same "technical debt" metaphor that is so often associated with poorly written code.
 
-Ward Cunningham is credited with coming up with the debt metaphor. He came up with the metaphor to describe the result of software written when the understanding of the application is not complete.
-
-It seems that the idea that Ward was trying to convey is that software can be delivered more quickly, but it will be at the expense of the understanding of the application. This is understanding that would be used to build and design the system. Repayment of this debt are the refactorings that are necessary make new learnings of the application evident within the software. The consequence of not paying back this debt is a decrease in velocity.
+It seems that the idea that Ward was trying to convey is that software can be delivered more quickly, but it will be at the expense of the understanding of the application. This is understanding that would be used to build and design the system. Repayment of this debt is the energy put forth on to refactor and reflect new learnings of the application. The consequence of not paying back this debt is a decrease in velocity.
 
 What Ward is not talking about about was writing sloppy code. He even clarifies his stance on the metaphor shouldn't be used as an excuse for poorly written software.
 
