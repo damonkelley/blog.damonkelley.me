@@ -15,6 +15,6 @@ Today, I paired with someone who does not use Vim, and I was forced to face a ha
 
 On OS X I can't select a hunk of text with out the mouse, or navigate a line by word with the system key bindings. I can't even cut, copy, or pasta very well!
 
-Just as I am a generalist when it comes to the technology stack that I work in, I think that it is important that I have a at least some command over the text editing tools that are built-in to my operating system. Further, this would give me the flexibility to go to other environments, where I might not be able to use Vim, and still be productive.
+Just as I strive to be a generalist when it comes to the technology stack that I work in, I think that it is important that I strive for the same goal in terms of the tools I use, including my text editor. Further, improving my editor fluency outside of Vim allows me the flexibility to go to other environments, where I might not be able to use Vim, and still be productive.
 
 How can I remedy this? I think the approach I might take is to spend a week doing a kata in an editor like Atom or Sublime Text. This will help me to work on my text editing fluency with the OS X system key bindings.
