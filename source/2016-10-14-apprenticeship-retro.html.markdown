@@ -49,7 +49,7 @@ At the time of this writing I have approximately two weeks until the my apprenti
 
 ### Beyond apprenticeship
 
-I have had plenty to keep me busy over the last 5 months. As the apprenticeship has been winding down, I have started to plan for how I can continue to grow as software developer.
+I have had plenty to keep me busy over the last 5 months. As the apprenticeship has been winding down, I have started to plan my approach continuing my growth as a developer.
 
 As of now I have three things that I would like to start or continue with after my apprenticeship ends.
 
@@ -59,7 +59,7 @@ As of now I have three things that I would like to start or continue with after 
 
 2. **Do a kata every day that I code**
 
-    When I was studying music in college, I had a professor that would say "you should practice your instrument every day that you eat". I am going to adapt that a bit, and do a kata everyday that I open my laptop to write code.
+    When I was studying music in college, I had a professor that would say "you should practice your instrument every day that you eat". I am going to adapt that a bit, and do a kata every day that I open my laptop to write code.
 
 3. **Always have a technical book that I am working**
 
