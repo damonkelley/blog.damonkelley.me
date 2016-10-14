@@ -21,7 +21,7 @@ At the time of this writing I have approximately two weeks until the my apprenti
 
 #### Blogging
 
-* Blogs written: 54
+* Blogs written: 53
 * Most frequent tags:
     * Vim - 8 posts
     * SOLID - 7 posts
